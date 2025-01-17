@@ -1,4 +1,8 @@
+import 'dart:math';
+
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:humansafety/consts/typo.dart';
 import 'package:humansafety/extentions/extention_on_num.dart';
@@ -32,6 +36,126 @@ class SosScreens extends StatelessWidget {
                 ),
               ],
             ),
+            98.heightbox,
+            Row(
+              children: [
+                70.widthbox,
+                Container(
+                  child: CircularCountDownTimer(
+                      backgroundColor: const Color.fromARGB(255, 211, 210, 208),
+                      width: 289,
+                      strokeWidth: 10,
+                      strokeCap: StrokeCap.round,
+                      height: 289,
+                      duration: 5,
+                      textStyle: TextStyle(fontSize: 53),
+                      fillColor: const Color.fromARGB(255, 0, 0, 0),
+                      fillGradient: SweepGradient(
+                        startAngle: pi / 4,
+                        colors: [
+                          Colors.green,
+                          Colors.yellow,
+                          Colors.yellow,
+                          Colors.yellow,
+                          Colors.yellow,
+                          Colors.yellow,
+                          Colors.yellow,
+                          Colors.yellow,
+                          Colors.yellow,
+                          const Color.fromARGB(255, 237, 20, 5),
+                          const Color.fromARGB(255, 237, 20, 5),
+                          const Color.fromARGB(255, 237, 20, 5),
+                          const Color.fromARGB(255, 237, 20, 5),
+                          const Color.fromARGB(255, 237, 20, 5),
+                          const Color.fromARGB(255, 237, 20, 5),
+                          const Color.fromARGB(255, 237, 20, 5),
+                          Colors.green,
+                          Colors.green,
+                          Colors.green,
+                          Colors.green,
+                          Colors.green,
+                          Colors.green,
+                          Colors.green,
+                          // Colors.blue
+                        ],
+                      ),
+                      ringColor: Colors.purple),
+                ),
+              ],
+            ),
+            37.heightbox,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 62.h,
+                  width: 338.w,
+                  decoration: BoxDecoration(
+                      color: Color(0xffffffff),
+                      border: Border.all(color: Colors.purple),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          blurRadius: 10.r,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(30.5.r)),
+                ),
+              ],
+            ),
+            18.heightbox,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 62.h,
+                  width: 338.w,
+                  decoration: BoxDecoration(
+                      color: Color(0xffffffff),
+                      border: Border.all(color: Colors.purple),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          blurRadius: 10.r,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(30.5.r)),
+                ),
+              ],
+            ),
+            18.heightbox,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 62.h,
+                  width: 338.w,
+                  decoration: BoxDecoration(
+                      color: Color(0xffffffff),
+                      border: Border.all(color: Colors.purple),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          blurRadius: 10.r,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(30.5.r)),
+                ),
+              ],
+            ),
+            18.heightbox,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 12.sp),
+                    "Note : After Swiping your current Location is Shared with\nTrusted Contacts until and unless you turn it “OFF”")
+              ],
+            )
           ],
         ),
       ),
