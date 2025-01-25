@@ -4,8 +4,10 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:humansafety/consts/colorpallets.dart';
 import 'package:humansafety/consts/typo.dart';
 import 'package:humansafety/extentions/extention_on_num.dart';
+import 'package:slider_button/slider_button.dart';
 
 class SosScreens extends StatelessWidget {
   const SosScreens({super.key});
@@ -42,44 +44,16 @@ class SosScreens extends StatelessWidget {
                 70.widthbox,
                 Container(
                   child: CircularCountDownTimer(
-                      backgroundColor: const Color.fromARGB(255, 211, 210, 208),
+                      backgroundColor: Colorpallets.countdownbg,
                       width: 289,
                       strokeWidth: 10,
                       strokeCap: StrokeCap.round,
                       height: 289,
-                      duration: 5,
+                      duration: 10,
                       textStyle: TextStyle(fontSize: 53),
                       fillColor: const Color.fromARGB(255, 0, 0, 0),
-                      fillGradient: SweepGradient(
-                        startAngle: pi / 4,
-                        colors: [
-                          Colors.green,
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                          Colors.yellow,
-                          const Color.fromARGB(255, 237, 20, 5),
-                          const Color.fromARGB(255, 237, 20, 5),
-                          const Color.fromARGB(255, 237, 20, 5),
-                          const Color.fromARGB(255, 237, 20, 5),
-                          const Color.fromARGB(255, 237, 20, 5),
-                          const Color.fromARGB(255, 237, 20, 5),
-                          const Color.fromARGB(255, 237, 20, 5),
-                          Colors.green,
-                          Colors.green,
-                          Colors.green,
-                          Colors.green,
-                          Colors.green,
-                          Colors.green,
-                          Colors.green,
-                          // Colors.blue
-                        ],
-                      ),
-                      ringColor: Colors.purple),
+                      fillGradient: Colorpallets.circularcountdowncolor,
+                      ringColor: Colorpallets.backgroundforcountdownring),
                 ),
               ],
             ),
@@ -129,20 +103,21 @@ class SosScreens extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  height: 62.h,
-                  width: 338.w,
-                  decoration: BoxDecoration(
-                      color: Color(0xffffffff),
-                      border: Border.all(color: Colors.purple),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          blurRadius: 10.r,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(30.5.r)),
+                SizedBox(
+                  width: 350,
+                  child: SliderButton(
+                      action: () async {
+                        ///Do something here OnSlide
+                        return true;
+                      },
+                      label: Text(
+                        "Swipe to Share locaton",
+                        style: TextStyle(
+                            color: Color(0xff4a4a4a),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17),
+                      ),
+                      icon: Icon(Icons.location_city)),
                 ),
               ],
             ),
