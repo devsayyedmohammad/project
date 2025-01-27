@@ -6,6 +6,7 @@ class Colorpallets {
   static Color lightpurple = Color(0xffD8B9FF);
   static Color black = Color(0xff000000);
   static Color red = Color(0xffff0000);
+  static Color urlcolor = Color(0xff0000EE);
   static Color greyfont = Color(0xff807B7B);
   static Color countdownbg = Color(0xffE1E1E1);
   static Color whiteredbuttons = Color(0xffF55656);

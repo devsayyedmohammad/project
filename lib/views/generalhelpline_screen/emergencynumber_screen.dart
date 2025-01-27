@@ -6,8 +6,8 @@ import 'package:humansafety/consts/typo.dart';
 import 'package:humansafety/extentions/extention_on_num.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class GeneralhelplineScreen extends StatelessWidget {
-  const GeneralhelplineScreen({super.key});
+class EmergencynumberScreen extends StatelessWidget {
+  const EmergencynumberScreen({super.key});
 
   Future<void> makeCall(String phoneNumber) async {
     Uri phoneno = Uri(scheme: 'tel', path: phoneNumber);
@@ -22,20 +22,18 @@ class GeneralhelplineScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
         title: Text(
-          "General Helpline",
+          "Emergency Number",
           style: TextStyle(color: Colors.black),
         ),
       ),
       body: Container(
         child: Column(
           children: [
-            SizedBox(
-              height: 800.h,
+            Expanded(
               child: ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: generalHelplineName.length,
+                itemCount: emergencyNames.length,
                 itemBuilder: (context, index) => Column(
                   children: [
                     Container(
@@ -63,7 +61,7 @@ class GeneralhelplineScreen extends StatelessWidget {
                               Text(
                                 style: TextStyle(
                                     fontSize: 14.sp, fontFamily: Typo.regular),
-                                generalHelplineName[index],
+                                emergencyNames[index],
                               ),
                             ],
                           ),
@@ -72,12 +70,14 @@ class GeneralhelplineScreen extends StatelessWidget {
                               Text(
                                 style: TextStyle(
                                     fontSize: 14.sp, fontFamily: Typo.regular),
-                                generalHelplineNumber[index],
+                                emergencyNumbers[index],
                               ),
                               16.widthbox,
                               IconButton(
                                   onPressed: () {
-                                    makeCall(generalHelplineNumber[index]);
+                                    makeCall(
+                                      emergencyNumbers[index],
+                                    );
                                   },
                                   icon: Icon(Icons.call)),
                               16.widthbox,
@@ -90,7 +90,7 @@ class GeneralhelplineScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
