@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:humansafety/views/generalhelpline_screen/generalhelpline_screen.dart';
 import 'package:humansafety/views/sos_screens/sos_screens.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class HumanSafety extends StatelessWidget {
       designSize: Size(430, 932),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SosScreens(),
+        home: GeneralhelplineScreen(),
       ),
     );
   }

@@ -4,9 +4,12 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:humansafety/consts/colorpallets.dart';
 import 'package:humansafety/consts/typo.dart';
+import 'package:humansafety/consts/urls.dart';
 import 'package:humansafety/extentions/extention_on_num.dart';
+import 'package:humansafety/views/sos_screens/location_sharing_screen.dart';
 import 'package:slider_button/slider_button.dart';
 
 class SosScreens extends StatelessWidget {
@@ -49,7 +52,7 @@ class SosScreens extends StatelessWidget {
                       strokeWidth: 10,
                       strokeCap: StrokeCap.round,
                       height: 289,
-                      duration: 10,
+                      duration: 15,
                       textStyle: TextStyle(fontSize: 53),
                       fillColor: const Color.fromARGB(255, 0, 0, 0),
                       fillGradient: Colorpallets.circularcountdowncolor,
@@ -62,19 +65,39 @@ class SosScreens extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 62.h,
                   width: 338.w,
+                  height: 62.h,
                   decoration: BoxDecoration(
-                      color: Color(0xffffffff),
-                      border: Border.all(color: Colors.purple),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          blurRadius: 10.r,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(30.5.r)),
+                    borderRadius: BorderRadius.circular(30.5.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2), // Shadow color
+                        blurRadius: 10.r, // Blur effect
+                        offset: Offset(5, 5), // Position offset
+                      ),
+                    ],
+                  ),
+                  child: SliderButton(
+                    action: () async {
+                      ///Do something here OnSlide
+                      return true;
+                    },
+                    alignLabel: Alignment.center,
+                    buttonSize: 62.r,
+                    backgroundColor: Colors.white,
+                    baseColor: Colorpallets.greyfont,
+                    label: Text(
+                      "I’m Safe",
+                      style:
+                          TextStyle(fontFamily: Typo.medium, fontSize: 20.sp),
+                    ),
+                    buttonColor: Colorpallets.greenbuttons,
+                    icon: Icon(
+                      Icons.check,
+                      size: 41.r,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -83,19 +106,40 @@ class SosScreens extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 62.h,
                   width: 338.w,
+                  height: 62.h,
                   decoration: BoxDecoration(
-                      color: Color(0xffffffff),
-                      border: Border.all(color: Colors.purple),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          blurRadius: 10.r,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(30.5.r)),
+                    borderRadius: BorderRadius.circular(30.5.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2), // Shadow color
+                        blurRadius: 10.r, // Blur effect
+                        offset: Offset(5, 5), // Position offset
+                      ),
+                    ],
+                  ),
+                  child: SliderButton(
+                      action: () async {
+                        ///Do something here OnSlide
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationSharingScreen(),
+                          ),
+                        );
+                        return true;
+                      },
+                      alignLabel: Alignment.center,
+                      buttonSize: 62.r,
+                      backgroundColor: Colors.white,
+                      baseColor: Colorpallets.greyfont,
+                      label: Text(
+                        "Start sharing now",
+                        style:
+                            TextStyle(fontFamily: Typo.medium, fontSize: 20.sp),
+                      ),
+                      buttonColor: Colorpallets.whiteredbuttons,
+                      icon: SvgPicture.asset(Urls.location)),
                 ),
               ],
             ),
@@ -103,21 +147,39 @@ class SosScreens extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 350,
-                  child: SliderButton(
-                      action: () async {
-                        ///Do something here OnSlide
-                        return true;
-                      },
-                      label: Text(
-                        "Swipe to Share locaton",
-                        style: TextStyle(
-                            color: Color(0xff4a4a4a),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 17),
+                Container(
+                  width: 338.w,
+                  height: 62.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.5.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2), // Shadow color
+                        blurRadius: 10.r, // Blur effect
+                        offset: Offset(5, 5), // Position offset
                       ),
-                      icon: Icon(Icons.location_city)),
+                    ],
+                  ),
+                  child: SliderButton(
+                    action: () async {
+                      ///Do something here OnSlide
+                      return true;
+                    },
+                    alignLabel: Alignment.center,
+                    buttonSize: 62.r,
+                    backgroundColor: Colors.white,
+                    baseColor: Colorpallets.greyfont,
+                    label: Text(
+                      "Call 112",
+                      style:
+                          TextStyle(fontFamily: Typo.medium, fontSize: 20.sp),
+                    ),
+                    buttonColor: Colorpallets.whiteredbuttons,
+                    icon: Icon(
+                      Icons.call,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -130,7 +192,7 @@ class SosScreens extends StatelessWidget {
                     style: TextStyle(fontSize: 12.sp),
                     "Note : After Swiping your current Location is Shared with\nTrusted Contacts until and unless you turn it “OFF”")
               ],
-            )
+            ),
           ],
         ),
       ),
