@@ -4,19 +4,18 @@ import 'package:humansafety/consts/colorpallets.dart';
 import 'package:humansafety/consts/global.dart';
 import 'package:humansafety/consts/typo.dart';
 import 'package:humansafety/extentions/extention_on_num.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class EmergencynumberScreen extends StatelessWidget {
   const EmergencynumberScreen({super.key});
 
-  Future<void> makeCall(String phoneNumber) async {
-    Uri phoneno = Uri(scheme: 'tel', path: phoneNumber);
-    if (await canLaunchUrl(phoneno)) {
-      await launchUrl(phoneno);
-    } else {
-      throw 'Could not launch $phoneNumber';
-    }
-  }
+  // Future<void> makeCall(String phoneNumber) async {
+  //   Uri phoneno = Uri(scheme: 'tel', path: phoneNumber);
+  //   if (await canLaunchUrl(phoneno)) {
+  //     await launchUrl(phoneno);
+  //   } else {
+  //     throw 'Could not launch $phoneNumber';
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +74,9 @@ class EmergencynumberScreen extends StatelessWidget {
                               16.widthbox,
                               IconButton(
                                   onPressed: () {
-                                    makeCall(
-                                      emergencyNumbers[index],
-                                    );
+                                    // makeCall(
+                                    //   emergencyNumbers[index],
+                                    // );
                                   },
                                   icon: Icon(Icons.call)),
                               16.widthbox,

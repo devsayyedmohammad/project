@@ -15,7 +15,7 @@ class NearbysafetyPlaceScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Nearby Safety Places"),
       ),
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: Column(
@@ -52,7 +52,7 @@ class NearbysafetyPlaceScreen extends StatelessWidget {
                           splashColor:
                               Colorpallets.lightpurple.withOpacity(0.3),
                           onTap: () {},
-                          child: Container(
+                          child: SizedBox(
                             height: 58.h,
                             width: 385.w,
                             child: Row(
