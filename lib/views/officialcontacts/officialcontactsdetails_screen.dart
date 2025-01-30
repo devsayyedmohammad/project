@@ -1,13 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:humansafety/consts/colorpallets.dart';
+import 'package:humansafety/consts/global.dart';
 import 'package:humansafety/consts/typo.dart';
 import 'package:humansafety/extentions/extention_on_num.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Officialcontactsdetails extends StatelessWidget {
   Officialcontactsdetails({super.key, required this.listindex});
   Map<String, String> listindex;
   @override
+  Future<void> urlLauncher(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else
+      throw 'cant launc';
+  }
+
+  Future<void> makemail(String emailId) async {
+    Uri emailid = Uri(scheme: 'mailto', path: emailId);
+    if (await canLaunchUrl(emailid)) {
+      await launchUrl(emailid);
+    } else
+      throw 'cannot send mail $emailId';
+  }
+
+  Future<void> makeCall(String phoneNo) async {
+    Uri phoneno = Uri(scheme: 'tel', path: phoneNo);
+    if (await canLaunchUrl(phoneno)) {
+      await launchUrl(phoneno);
+    } else
+      throw 'cant launch $phoneNo';
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -83,7 +108,10 @@ class Officialcontactsdetails extends StatelessWidget {
                                 style: TextStyle(fontFamily: Typo.semibold),
                               ),
                               IconButton(
-                                  onPressed: () {}, icon: Icon(Icons.call)),
+                                  onPressed: () {
+                                    makeCall(listindex['contact']!);
+                                  },
+                                  icon: Icon(Icons.call)),
                             ],
                           )
                         ],
@@ -103,7 +131,7 @@ class Officialcontactsdetails extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                width: 220,
+                                width: 220.w,
                                 child: Text(
                                   textAlign: TextAlign.right,
                                   listindex['address']!,
@@ -113,7 +141,10 @@ class Officialcontactsdetails extends StatelessWidget {
                                 ),
                               ),
                               IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    urlLauncher(
+                                        listindex['policeStationLocation']!);
+                                  },
                                   icon: Icon(Icons.directions_outlined)),
                             ],
                           )
@@ -134,7 +165,7 @@ class Officialcontactsdetails extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                width: 250,
+                                width: 250.w,
                                 child: Text(
                                   listindex['email']!,
                                   style: TextStyle(
@@ -144,7 +175,11 @@ class Officialcontactsdetails extends StatelessWidget {
                                 ),
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  makemail(
+                                    listindex['email']!,
+                                  );
+                                },
                                 icon: Icon(Icons.email_outlined),
                               ),
                             ],
