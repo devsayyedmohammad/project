@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:humansafety/consts/colorpallets.dart';
 import 'package:humansafety/consts/global.dart';
 import 'package:humansafety/consts/typo.dart';

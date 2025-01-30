@@ -11,7 +11,7 @@ class Colorpallets {
   static Color countdownbg = Color(0xffE1E1E1);
   static Color whiteredbuttons = Color(0xffF55656);
   static Color greenbuttons = Color(0xff2FD281);
-  static Color backgroundforcountdownring = Color.fromARGB(255, 153, 0, 255);
+  static Color backgroundforcountdownring = Color(0xffF8F8F8);
 
   static Gradient whiteredgradientbuttons = LinearGradient(
     colors: [Color(0xffFF7A7A), Color(0xffE21010)],
@@ -20,29 +20,29 @@ class Colorpallets {
   static Gradient circularcountdowncolor = SweepGradient(
     startAngle: pi / 4,
     colors: [
-      Colors.green,
-      Colors.yellow,
-      Colors.yellow,
-      Colors.yellow,
-      Colors.yellow,
-      Colors.yellow,
-      Colors.yellow,
-      Colors.yellow,
-      Colors.yellow,
-      const Color.fromARGB(255, 237, 20, 5),
-      const Color.fromARGB(255, 237, 20, 5),
-      const Color.fromARGB(255, 237, 20, 5),
-      const Color.fromARGB(255, 237, 20, 5),
-      const Color.fromARGB(255, 237, 20, 5),
-      const Color.fromARGB(255, 237, 20, 5),
-      const Color.fromARGB(255, 237, 20, 5),
-      Colors.green,
-      Colors.green,
-      Colors.green,
-      Colors.green,
-      Colors.green,
-      Colors.green,
-      Colors.green,
+      Colors.green.withOpacity(0.8),
+      Colors.yellow.withOpacity(0.8),
+      Colors.yellow.withOpacity(0.8),
+      Colors.yellow.withOpacity(0.8),
+      Colors.yellow.withOpacity(0.8),
+      Colors.yellow.withOpacity(0.8),
+      Colors.yellow.withOpacity(0.8),
+      Colors.yellow.withOpacity(0.8),
+      Colors.yellow.withOpacity(0.8),
+      const Color.fromARGB(255, 237, 20, 5).withOpacity(0.8),
+      const Color.fromARGB(255, 237, 20, 5).withOpacity(0.8),
+      const Color.fromARGB(255, 237, 20, 5).withOpacity(0.8),
+      const Color.fromARGB(255, 237, 20, 5).withOpacity(0.8),
+      const Color.fromARGB(255, 237, 20, 5).withOpacity(0.8),
+      const Color.fromARGB(255, 237, 20, 5).withOpacity(0.8),
+      const Color.fromARGB(255, 237, 20, 5).withOpacity(0.8),
+      Colors.green.withOpacity(0.8),
+      Colors.green.withOpacity(0.8),
+      Colors.green.withOpacity(0.8),
+      Colors.green.withOpacity(0.8),
+      Colors.green.withOpacity(0.8),
+      Colors.green.withOpacity(0.8),
+      Colors.green.withOpacity(0.8),
       // Colors.blue
     ],
   );

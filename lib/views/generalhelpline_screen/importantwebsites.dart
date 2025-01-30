@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:humansafety/consts/colorpallets.dart';
 import 'package:humansafety/consts/global.dart';
 import 'package:humansafety/consts/typo.dart';
-import 'package:humansafety/extentions/extention_on_num.dart';
 
 class Importantwebsites extends StatelessWidget {
   const Importantwebsites({super.key});

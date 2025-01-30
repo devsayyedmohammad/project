@@ -4,9 +4,18 @@ import 'package:humansafety/consts/colorpallets.dart';
 import 'package:humansafety/consts/global.dart';
 import 'package:humansafety/consts/typo.dart';
 import 'package:humansafety/extentions/extention_on_num.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NashikservicesScreen extends StatelessWidget {
   const NashikservicesScreen({super.key});
+
+  void urlLauncher(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'cant launch url ';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +29,7 @@ class NashikservicesScreen extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
-                itemCount: importantWebsiteName.length,
+                itemCount: nashikservices.length,
                 itemBuilder: (context, index) => Container(
                   padding: EdgeInsets.only(left: 16.w),
                   margin: EdgeInsets.only(bottom: 10.h, left: 16, right: 16),
@@ -47,12 +56,12 @@ class NashikservicesScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            nashikEmergencyServices[index],
+                            nashikservices[index]['name']!,
                             style: TextStyle(
                                 fontFamily: Typo.regular, fontSize: 12.sp),
                           ),
                           Text(
-                            nashikEmergencyNumbers[index],
+                            nashikservices[index]['phone']!,
                             style: TextStyle(
                                 fontFamily: Typo.regular, fontSize: 12.sp),
                           ),
@@ -62,7 +71,10 @@ class NashikservicesScreen extends StatelessWidget {
                         children: [
                           IconButton(onPressed: () {}, icon: Icon(Icons.call)),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                urlLauncher(
+                                    nashikservices[index]['googleMapUrl']!);
+                              },
                               icon: Icon(Icons.directions_outlined)),
                           16.widthbox,
                         ],
