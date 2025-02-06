@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:humansafety/controllers/textformcontroller.dart';
+import 'package:humansafety/consts/colorpallets.dart';
+import 'package:humansafety/consts/globals.dart';
+import 'package:humansafety/view/home_screen/home_screen.dart';
+import 'package:humansafety/view/navbar_screen/navbar.dart';
+import 'package:humansafety/view/tp.dart';
 import 'package:humansafety/views/addtrustedcontacts/addcontact_screen.dart';
 import 'package:humansafety/views/addtrustedcontacts/trustedcontact_screen.dart';
 import 'package:humansafety/views/blogs/blog_screen.dart';
@@ -32,11 +37,10 @@ class HumanSafety extends StatelessWidget {
             create: (_) => Textformcontroller(),
           )
         ],
-        child: MaterialApp(
+        child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          home: OfficialcontactlistScreen(),
+          routerConfig: router,
         ),
       ),
     );
   }
-}
