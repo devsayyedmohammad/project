@@ -1,4 +1,7 @@
 class Urls {
+  static String location = "assets/vectors/location.svg";
+  
+  // Additional URLs from the second branch
   static String profile = "assets/images/gg_profile.svg";
   static String minimap = "assets/images/Map.png";
   static String outmssg = "assets/vectors/ic_outline-message.svg";
@@ -12,10 +15,9 @@ class Urls {
   static String TimePass = "assets/vectors/Rectangle 386.png";
   static String HomeFilled = "assets/vectors/Home_Filled.svg";
   static String HomeUnfilled = "assets/vectors/Home_Unfilled.svg";
-
   static String CallFilled = "assets/vectors/CallFilled.svg";
   static String CallUnFilled = "assets/vectors/CallUnfilled.svg";
-
+  
   static String featuresFill = "assets/images/Fill Features.png";
   static String featuresUnfilled = "assets/images/Features.png";
   static String TrackingFilled = "assets/images/TrackingFilled.png";
